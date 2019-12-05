@@ -35,7 +35,7 @@ void deque<T>::push_front(const T &data)
     if (nd == nullptr)
         return;
     else
-    { nd->_Next = _Beg; nd->_Prev = 0; _Beg = nd; } // _Beg->_Prev;
+    { nd->_Next = _Beg; nd->_Prev = 0; _Beg = nd; }
     count++;
 }
 
