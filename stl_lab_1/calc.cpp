@@ -1,15 +1,15 @@
 #include "calc.h"
 
-void calc::vec_fill(vector<int> &vec, int num){
-    for(int i = 0; i < num; i++){
+void calc::vec_fill(vector<int> &vec, int num){         // Напишите алгоритм сортировки (любой простейший) 
+    for(int i = 0; i < num; i++){                       // содержимого вектора целых чисел, используя оператор operator[].
         vec.push_back(rand()%30);
     }
 }
 
 //------------------------------------------------------------
 void calc::bsort_at(vector<int> &vec) {
-    if (vec.size() > 1) {
-        int x = 0;
+    if (vec.size() > 1) {                                      // Напишите алгоритм сортировки (любой простейший) содержимого 
+        int x = 0;                                             // вектора целых чисел, используя метод at().
         for (int i = 0; i < vec.size() - 2; i++) {
             for (int j = 0; j < vec.size() - 1; j++) {
                 if (vec.at(j) > vec.at(j + 1)) {
@@ -23,14 +23,16 @@ void calc::bsort_at(vector<int> &vec) {
 }
 
 //--------------------------------------------------------------
+/*Напишите алгоритм сортировки (любой простейший) содержимого вектора целых чисел, используя для доступа к 
+    содержимому вектора только итераторы. Для работы с итераторами допустимо использовать только операторы получения 
+    текущего элемента и перехода в следующему (подсказка, можно сохранять копию итератора указывающего на некоторый элемент).*/
+
 void calc::bsort_it(vector<int> &vec) {
     vector<int>::iterator it_begin, it_begin2;
-    int temp = 0;
-    if (vec.size() > 1) {
-        it_begin = vec.begin();
-
-
-        for (it_begin; it_begin < vec.end() - 2; it_begin++) {
+    int temp = 0;                                                       
+     if (vec.size() > 1) {                                              
+      it_begin = vec.begin();                                           
+          for (it_begin; it_begin < vec.end() - 2; it_begin++) {
             for (it_begin2 = vec.end() - 1; it_begin < it_begin2; it_begin2--) {
                 if (*it_begin > *it_begin2) {
                     temp = *it_begin;
@@ -43,24 +45,29 @@ void calc::bsort_it(vector<int> &vec) {
 }
 
 //-----------------------------------------------------
-void calc::from_file_to_vec(vector<string> &s_vec) {
-    ifstream fin;                                       //открываем поток
-    fin.open("/home/podkyr/file.txt", ios::in);      //поток будет закрыт при отработке функции
+void calc::from_file_to_vec(vector<string> &s_vec) {            //Прочитайте во встроенный массив С содержимое текстового файла, 
+    (без циклов и алгоритмов STL)                               //скопируйте данные в вектор одной строкой кода    
+    ifstream fin;                                      
+    fin.open("/home/file.txt", ios::in);      //поток будет закрыт при отработке функции
 
     if (fin) {
         fin.seekg(0, fin.end);                              //определяем длину
         int len = fin.tellg();
         fin.seekg(0, fin.beg);
 
-        char buff[len];
+        char buff[len];                                                 
 
         fin.read(buff, len);                                //считываем
         s_vec.assign(1, buff);
-    }                      //добавляем в вектор
+    }                      
     printvec(s_vec);
 }
 
 //---------------------------------------------------
+/*Напишите программу, сохраняющую в векторе числа, полученные из стандартного ввода (окончанием ввода является число 0). 
+        Удалите все элементы, которые делятся на 2 (не используете стандартные алгоритмы STL), если последнее число 1.
+        Если последнее число 2, добавьте после каждого числа которое делится на 3 три единицы.*/
+
 void calc::delOdd_addOne(vector<int> &vec) {
     vector<int>::iterator it;
     int n;
@@ -90,6 +97,10 @@ void calc::delOdd_addOne(vector<int> &vec) {
 }
 
 //------------------------------------------------------
+/*Напишите функцию void fillRandom(double* array, int size) заполняющую массив случайными значениями в интервале 
+    от -1.0 до 1.0. Заполните с помощью заданной функции вектора размером 5,10,25,50,100 и отсортируйте его содержимое 
+    (с помощью любого разработанного ранее алгоритма модифицированного для сортировки действительных чисел) */
+
 void calc::fillRandom(double *array, int size) {
     /*default_random_engine ran{ } ;
     uniform_real_distribution<>
