@@ -53,7 +53,7 @@ int main() {
 
 void from_file_to_vec(string &s) {
     ifstream fin;                                       
-    fin.open("/home/podkyr/file.txt", ios::in);      
+    fin.open("/home/file.txt", ios::in);      
     int len = 0;
     if (fin) {
 
