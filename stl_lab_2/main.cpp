@@ -1,23 +1,8 @@
-/*Разработать программу, которая должна сделать следующее:
-    1. Прочитать содержимое текстового файла. Файл может содержать:
-        a. Слова – состоят из латинских строчных и заглавных букв, а также цифр, длинна слова должна быть не более 20 символов
-        b. Знаки препинания – «.», «,» «!» «?» «:» «;»
-        c. Пробельные символы – пробел, табуляция, символ новой строки.
-
-    2. Отформатировать текст следующим образом:
-        a. Не должно быть  пробельных символов отличных от пробела
-        b. Не должно идти подряд более одного пробела
-        c. Между словом и знаком препинания не должно быть пробела
-        d. После знака препинания всегда должен идти пробел
-        e. Слова длиной более 10 символов заменяются на слово «Vau!!!»
-
-    3. Преобразовать полученный текст в набор строка, каждая из которых содержит целое количество строк (слово должно 
-    целиком находиться в строке) и ее длинна не превышает 40 символов.*/
-
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
+#include <clocale>
 
 using namespace std;
 
@@ -33,6 +18,8 @@ void change_long_words(string &s);
 
 void separate_to_tokens(string &s, vector<string> &v_s);
 
+void join(const vector<int> &from, vector<int> &to);
+
 int main() {
 
     vector<string> v_string;
@@ -45,27 +32,34 @@ int main() {
     separate_to_tokens(s, v_string);
 
     for (string str : v_string) {
-        cout << str << endl;
+       cout << str << endl;
     }
 
     return 0;
+
 }
 
+
 void from_file_to_vec(string &s) {
-    ifstream fin;                                       
-    fin.open("/home/file.txt", ios::in);      
+    ifstream fin;
+    fin.open("/home/podkyr/CLionProjects/n_lab2/main.cpp", ios::in);
     int len = 0;
     if (fin) {
-
-        fin.seekg(0, fin.end);                              
+        fin.seekg(0, fin.end);
         len = fin.tellg();
         fin.seekg(0, fin.beg);
 
+        char c;
+        int i = 0;
         char buff[len];
-
-        fin.read(buff, len);                               
-
-        s.append(buff, len);
+        for (int j = 0; j < len; ++j) {
+            c = fin.get();
+            if (isprint(c)) {
+                buff[i] = c;
+                ++i;
+            }
+        }
+        s.append(buff, i);
     }
 }
 
@@ -73,7 +67,7 @@ void separate_punct(string &s) {
     int i = 0;
     int j = 1;
 
-    for (i; i < s.size(); ++i, ++j) {                      // отделяем пунктуацию от букв .first -> . first
+    for (i; j < s.size(); ++i, ++j) {                      // отделяем пунктуацию от букв .first -> . first
         if (ispunct(s.at(i)) && isgraph(s.at(j))) {
             if (s.at(i) == '-') continue;
             s.insert(j, " ");
@@ -86,8 +80,8 @@ void change_symb_to_space(string &s) {
     int j = 1;
     if (iscntrl(s.at(0))) { s.replace(0, 1, " "); }
 
-    for (i, j; j < s.size(); ++i, ++j) {                                  // меняем отдельно стоящие символы на
-        if (iscntrl(s.at(j)) || isspace(s.at(i)) && ispunct(s.at(j))) {   // пробелы
+    for (i, j; j < s.size(); ++i, ++j) {                                    // меняем отдельно стоящие символы на
+        if (iscntrl(s.at(j)) || (isspace(s.at(i)) && ispunct(s.at(j)))) {   // пробелы
             s.replace(j, 1, " ");
         }
 
@@ -140,11 +134,17 @@ void change_long_words(string &s) {
 void separate_to_tokens(string &s, vector<string> &v_s) {       //разбиваем на строки до 40 символов
 
     int j = 0;
+    int size = s.size();
+
     for (int i = 40; i < s.size(); i += 40) {
         while (!isspace(s.at(i))) {
             i--;
         }
         v_s.push_back(s.substr(j, i - j));
         j = i + 1;
+        if (size - j < 40) {
+            v_s.push_back(s.substr(j, size - j));
+        }
     }
 }
+
