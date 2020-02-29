@@ -18,33 +18,32 @@
         1 8 2 7 3 6 4 5
  */
 #include "priority.cpp"
-
+#include "recurs.cpp"
 using namespace std;
 
-void vec_fill(list<int> &lst);
+void list_fill(list<int> &lst);
 
 int recurs(list<int>::iterator lst_begin, list<int>::iterator lst_end);
 
 int main() {
-//    srand((unsigned) time(nullptr));
-/*
+    srand((unsigned) time(nullptr));
     list<int> lst;
     list<int>::iterator ls, ls2(ls);
 
 
-    vec_fill(lst);
+    list_fill(lst);
+
     for (int l : lst) {
         cout << l << " ";
-
     }
-    cout << endl;
+    cout << '\n';
 
     ls = lst.begin();
-    ls2 = lst.end();
-    recurs(ls, --ls2);
-*/
+    ls2 = --lst.end();
 
-    QueueWithPriority le;
+    recurs(ls, ls2);
+
+/*    QueueWithPriority le;
     QueueElement al = {"high1"};
     QueueElement bl = {"low1"};
     QueueElement cl = {"norm1"};
@@ -71,28 +70,6 @@ int main() {
     le.print();
 
     auto i = le.GetElementFromQueue();
-    cout << i.name;
+    cout << i.name;*/
     return 0;
-}
-
-void vec_fill(list<int> &lst) {
-    for (int i = 0; i < 14; i++) {
-        lst.push_back(rand() % 20);
-    }
-}
-
-int recurs(list<int>::iterator lst_begin, list<int>::iterator lst_end) {
-    if (lst_begin != lst_end) {
-        if (distance(lst_begin, lst_end) == 1) {
-            cout << *lst_begin << " ";
-            cout << *lst_end;
-            return 0;
-        }
-        cout << *lst_begin << " ";
-        cout << *lst_end << " ";
-        return recurs(++lst_begin, --lst_end);
-    } else {
-        cout << *lst_begin;
-        return 0;
-    }
 }
