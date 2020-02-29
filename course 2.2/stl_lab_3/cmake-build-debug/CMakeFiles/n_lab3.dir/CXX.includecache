@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/podkyr/CLionProjects/n_lab3/main.cpp
+iostream
+-
+list
+-
+string
+-
+priority.cpp
+/home/podkyr/CLionProjects/n_lab3/priority.cpp
+
+/home/podkyr/CLionProjects/n_lab3/priority.cpp
+iostream
+-
+list
+-
+string
+-
+algorithm
+-
+vector
+-
+
