@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/n_lab3.dir/main.cpp.o CMakeFiles/n_lab3.dir/priority.cpp.o  -o n_lab3 
