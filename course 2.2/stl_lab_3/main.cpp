@@ -39,7 +39,7 @@ int main() {
     cout << '\n';
 
     ls = lst.begin();
-    ls2 = --lst.end();
+    ls2 = lst.end();
 
     recurs(ls, ls2);
 

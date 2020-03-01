@@ -37,17 +37,11 @@ public:
             low_priority_elements++;
         } else if (priority == HIGH) {
             it_e = list_elements.begin();
-//            for (int i = 0; i < low_priority_elements+normal_priority_elements; ++i){
-//                ++it_e;
-//            }
             advance(it_e, low_priority_elements+normal_priority_elements);
             list_elements.insert(it_e, element);
             high_priority_elements++;
         } else {
             it_e = list_elements.begin();
-//            for (int i = 0; i < low_priority_elements; ++i) {
-//                ++it_e;
-//            }
             advance(it_e, low_priority_elements);
             list_elements.insert(it_e, element);
             normal_priority_elements++;
