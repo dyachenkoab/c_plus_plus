@@ -1,3 +1,0 @@
-/home/podkyr/CLionProjects/n_lab6/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/podkyr/CLionProjects/n_lab6/cmake-build-debug/CMakeFiles/n_lab6.dir
-/home/podkyr/CLionProjects/n_lab6/cmake-build-debug/CMakeFiles/edit_cache.dir

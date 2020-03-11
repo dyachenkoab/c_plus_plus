@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/n_lab6.dir/main.cpp.o CMakeFiles/n_lab6.dir/figure.cpp.o CMakeFiles/n_lab6.dir/structs.cpp.o CMakeFiles/n_lab6.dir/unrepetable.cpp.o  -o n_lab6 
