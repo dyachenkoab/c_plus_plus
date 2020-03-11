@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/podkyr/CLionProjects/n_lab6/figure.cpp
+structs.cpp
+/home/podkyr/CLionProjects/n_lab6/structs.cpp
+vector
+-
+cstdlib
+-
+iostream
+-
+algorithm
+-
+
+/home/podkyr/CLionProjects/n_lab6/main.cpp
+figure.cpp
+/home/podkyr/CLionProjects/n_lab6/figure.cpp
+unrepetable.cpp
+/home/podkyr/CLionProjects/n_lab6/unrepetable.cpp
+
+/home/podkyr/CLionProjects/n_lab6/structs.cpp
+iostream
+-
+vector
+-
+
+/home/podkyr/CLionProjects/n_lab6/unrepetable.cpp
+unordered_set
+-
+iostream
+-
+string
+-
+fstream
+-
+cstring
+-
+iterator
+-
+

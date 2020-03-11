@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/n_lab5.dir/main.cpp.o  -o n_lab5 
