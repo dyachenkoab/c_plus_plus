@@ -1,0 +1,4 @@
+/home/podkyr/CLionProjects/test3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/podkyr/CLionProjects/test3/cmake-build-debug/CMakeFiles/test3.dir
+/home/podkyr/CLionProjects/test3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/podkyr/CLionProjects/test3/cmake-build-debug/CMakeFiles/test3_autogen.dir

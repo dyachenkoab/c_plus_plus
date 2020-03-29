@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+0dd73ea8897d95246dca9ed210179ad9 CMakeFiles/test3_autogen
+60ad05c298e71a90319cb1d63ec4eabd qrc_qml.cpp

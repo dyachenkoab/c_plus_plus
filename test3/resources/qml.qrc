@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>/home/podkyr/CLionProjects/test3/cmake-build-debug/src/FileMenu.qml</file>
+    </qresource>
+</RCC>
