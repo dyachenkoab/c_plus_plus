@@ -1,0 +1,19 @@
+#ifndef DATA_H
+#define DATA_H
+#include <QString>
+
+class data
+{
+    QString name;
+    QString type;
+    double price;
+    double price_with_nds_10 = ;
+    double price_with_nds_30;
+    
+public:
+    
+    data();
+    ~data() = default;
+};
+
+#endif // DATA_H
