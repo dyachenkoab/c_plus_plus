@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/src">
+        <file>src/Main.qml</file>
+        <file>src/Buttons.qml</file>
+        <file>src/Display.qml</file>
+    </qresource>
+</RCC>
