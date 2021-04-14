@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>qml/MapModule.qml</file>
+        <file>image/calendar.png</file>
+        <file>image/carNumber.png</file>
+        <file>image/clock.png</file>
+        <file>qml/SearchBlock.qml</file>
+        <file>qml/SearchBlockForm.ui.qml</file>
+        <file>qml/RouteBlock.qml</file>
+        <file>qml/RouteBlockForm.ui.qml</file>
+        <file>image/photo.jpg</file>
+        <file>image/car.png</file>
+        <file>image/camera.png</file>
+        <file>qml/Pointer.qml</file>
+        <file>qml/modules/sliderModule/Watcher.qml</file>
+        <file>qml/modules/sliderModule/WatcherForm.ui.qml</file>
+        <file>qml/PolyLine.qml</file>
+        <file>qml/CarPopup.qml</file>
+        <file>qml/CarPopupForm.ui.qml</file>
+        <file>qml/CameraSign.qml</file>
+    </qresource>
+</RCC>
