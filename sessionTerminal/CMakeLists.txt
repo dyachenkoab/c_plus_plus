@@ -39,18 +39,11 @@ target_link_libraries(${PROJECT_NAME}
   Qt5::Widgets
   )
 
+install( TARGETS ${PROJECT_NAME} DESTINATION "/usr/bin" )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+SET(CPACK_GENERATOR "DEB")
+SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Diachenko Andrey")
+set(CPACK_DEBIAN_FILE_NAME DEB-DEFAULT)
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "qtbase5-dev (>=5.9), qtbase5-dev-tools (>=5.9)")
+INCLUDE(CPack)
 
